@@ -44,6 +44,10 @@ body {
   height: 100%;
 }
 
+.card {
+  margin: 0 0.25rem;
+}
+
 
 .card-top, .card-bottom {
   width: 4.4rem;
@@ -108,7 +112,19 @@ body {
   transform: translate(-50%, -50%);
   line-height: 1;
   color: $soft-red-bottom;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25rem;
+  & span {
+    color: $grayish-blue;
+    font-size: 0.55rem;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+  }
 }
 
 .counter {
