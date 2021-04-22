@@ -12,6 +12,7 @@ h2 {
 h1 {
   letter-spacing: 0.5rem;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 html {
@@ -42,8 +43,16 @@ body {
 .card-top,
 .card-bottom {
   width: 4.4rem;
-  height: 2rem;
+  height: 2.1rem;
   position: relative;
+}
+
+@media screen and (min-width: 640px) {
+  .card-top,
+  .card-bottom {
+    width: 6.2rem;
+    height: 3rem;
+  }
 }
 
 .card-top {
@@ -76,6 +85,8 @@ body {
 .card-bottom {
   border-radius: 0 0 10px 10px;
   background-color: #34364f;
+  -webkit-box-shadow: #101118 2px 5px 5px;
+          box-shadow: #101118 2px 5px 5px;
 }
 
 .card-bottom::before {
@@ -111,6 +122,12 @@ body {
   font-size: 1.7rem;
 }
 
+@media screen and (min-width: 640px) {
+  .card-bottom-text > span {
+    font-size: 2.7rem;
+  }
+}
+
 .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,7 +135,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 0.25rem;
+  margin-top: 0.8rem;
 }
 
 .card-footer span {
@@ -138,11 +155,34 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 50%;
+  height: 40%;
+}
+
+.footer {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2.5rem;
+}
+
+.footer a {
+  margin: 0 2rem;
+}
+
+.footer a:hover {
+  -webkit-filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
+          filter: invert(58%) sepia(38%) saturate(4955%) hue-rotate(310deg) brightness(101%) contrast(102%);
 }
 
 .main-section {
-  height: 100%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,5 +208,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 3.85rem;
 }
 /*# sourceMappingURL=estilos.css.map */
