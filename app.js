@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let hours = 1;
   let minutes = 1;
   let seconds = 2;
-  
-  let time = 
-    days * 86400000 + 
-    hours * 3600000 + 
+
+  let time =
+    days * 86400000 +
+    hours * 3600000 +
     minutes * 60000 +
     seconds * 1000
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     time = result.endTime;
 
     const { days, hours, minutes, seconds } = result;
-    
+
     textSeconds.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
     textMinutes.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
     textHours.innerHTML = hours < 10 ? `0${hours}` : hours;
