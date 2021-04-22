@@ -15,7 +15,7 @@ const getRemainingTime = (endTime) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let days = 0;
+  let days = 1;
   let hours = 1;
   let minutes = 1;
   let seconds = 2;
@@ -26,11 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
     minutes * 60000 +
     seconds * 1000
 
-  let spans = document.querySelectorAll(".card-bottom-text  span");
-  let textDays = spans[0];
-  let textHours = spans[1]
-  let textMinutes = spans[2]
-  let textSeconds = spans[3]
+  let spansBottom = document.querySelectorAll(".card-bottom-text  span");
+  let spansTop = document.querySelectorAll(".card-top-text span");
+
+  let textDaysTop = spansTop[0]
+  let textDaysBottom = spansBottom[0];
+  let textHoursTop = spansTop[1];
+  let textHoursBottom = spansBottom[1];
+  let textMinutesTop = spansTop[2];
+  let textMinutesBottom = spansBottom[2]
+  let textSecondsTop = spansTop[3];
+  let textSecondsBottom = spansBottom[3];
 
   const countDown = setInterval(() => {
     const result = getRemainingTime(time);
@@ -38,11 +44,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const { days, hours, minutes, seconds } = result;
 
-    textSeconds.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-    textMinutes.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-    textHours.innerHTML = hours < 10 ? `0${hours}` : hours;
-    textDays.innerHTML = days < 10 ? `0${days}` : days;
-    console.log(result);
+    textSecondsTop.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+    textSecondsBottom.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+
+    textMinutesTop.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+    textMinutesBottom.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+
+    textHoursTop.innerHTML = hours < 10 ? `0${hours}` : hours;
+    textHoursBottom.innerHTML = hours < 10 ? `0${hours}` : hours;
+
+    textDaysTop.innerHTML = days < 10 ? `0${days}` : days;
+    textDaysBottom.innerHTML = days < 10 ? `0${days}` : days;
+
 
     if (time < 0) {
       clearInterval(countDown);
