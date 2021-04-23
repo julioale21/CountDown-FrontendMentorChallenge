@@ -14,7 +14,7 @@ $soft-red: hsl(345, 95%, 68%);
 $top-card: #2c2c44;
 $bottom-card: #34364f;
 
-$soft-red-top: #d64f70;
+$soft-red: #d64f70;
 $soft-red-bottom: #ff5c89;
 
 * {
@@ -210,4 +210,101 @@ body {
     justify-content: center;
     padding-bottom: 3.85rem;
   }
+}
+
+
+
+/*    Modal    */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.7);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  &-form {
+    width: 325px;
+    height: 480px;
+    border: 3px solid $dark-desatured-blue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $very-dark-blue;
+
+    &-button-start {
+      width: 80px;
+      padding: 0.4rem 0;
+      background-color: $dark-desatured-blue;
+      border-radius: 10px;
+      margin-top: 1rem;
+      color: $soft-red;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+
+    &-input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+
+      & input {
+        width: 100px;
+        height: 30px;
+        background-color: $dark-desatured-blue;
+        border: 2px solid $soft-red;
+        border-radius: 10px;
+        outline: none;
+        color: $soft-red;
+        font-size: 1.5rem;
+        text-align: center;
+
+        &::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+      }
+    }
+
+    & label {
+      color: $soft-red;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  & h1 {
+    color: $white;
+  }
+
+}
+
+.close-icon {
+  width: 50px;
+  height: 50px;
+  float: right;
+
+  &-container {
+    width: 100%;
+    display: block;
+  }
+}
+
+#close-button {
+  width: 50px;
+  float: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }

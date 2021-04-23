@@ -15,17 +15,6 @@ const getRemainingTime = (endTime) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let days = 1;
-  let hours = 1;
-  let minutes = 1;
-  let seconds = 2;
-
-  let time =
-    days * 86400000 +
-    hours * 3600000 +
-    minutes * 60000 +
-    seconds * 1000
-
   let spansBottom = document.querySelectorAll(".card-bottom-text  span");
   let spansTop = document.querySelectorAll(".card-top-text span");
 
@@ -38,27 +27,64 @@ document.addEventListener("DOMContentLoaded", () => {
   let textSecondsTop = spansTop[3];
   let textSecondsBottom = spansBottom[3];
 
-  const countDown = setInterval(() => {
-    const result = getRemainingTime(time);
-    time = result.endTime;
+  let cardTopSeconds = document.getElementById("card-top-seconds");
 
-    const { days, hours, minutes, seconds } = result;
+  function startCountDown(time) {
+    const countDown = setInterval(() => {
+      const result = getRemainingTime(time);
+      time = result.endTime;
+  
+      console.log("fsa")
+      const { days, hours, minutes, seconds } = result;
+  
+      cardTopSeconds.style.animation = "top-to-bottom 0.5s linear";
+      cardTopSeconds.style.transition = "all 1s ease"
+  
+      textSecondsTop.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+      textSecondsBottom.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+  
+      textMinutesTop.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+      textMinutesBottom.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+  
+      textHoursTop.innerHTML = hours < 10 ? `0${hours}` : hours;
+      textHoursBottom.innerHTML = hours < 10 ? `0${hours}` : hours;
+  
+      textDaysTop.innerHTML = days < 10 ? `0${days}` : days;
+      textDaysBottom.innerHTML = days < 10 ? `0${days}` : days;
+  
+      //cardTopSeconds.addEventListener("animationend", animationTop);
+  
+      if (time < 0) {
+        clearInterval(countDown);
+      }
+    }, 1000)
+  }
 
-    textSecondsTop.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-    textSecondsBottom.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+  const modal = document.getElementById("modal");
+  const startButton = document.getElementById("start-button");
+  startButton.addEventListener("submit", (e) => {
+    e.preventDefault();
+    modal.style.display = "none";
+    let days = Number(document.getElementById("days").value) || 0;
+    let hours = Number(document.getElementById("hours").value) || 0;;
+    let minutes = Number(document.getElementById("minutes").value) || 0;;
+    let seconds = Number(document.getElementById("seconds").value) || 0;;
+    
+    let time =
+      days * 86400000 +
+      hours * 3600000 +
+      minutes * 60000 +
+      seconds * 1000
 
-    textMinutesTop.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-    textMinutesBottom.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+    startCountDown(time);
+  });
 
-    textHoursTop.innerHTML = hours < 10 ? `0${hours}` : hours;
-    textHoursBottom.innerHTML = hours < 10 ? `0${hours}` : hours;
-
-    textDaysTop.innerHTML = days < 10 ? `0${days}` : days;
-    textDaysBottom.innerHTML = days < 10 ? `0${days}` : days;
-
-
-    if (time < 0) {
-      clearInterval(countDown);
-    }
-  }, 1000)
+  const closeButton = document.getElementById("close-button");
+  closeButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    
+    modal.style.display = "none";
+    startCountDown(time);
+  });
+  
 });

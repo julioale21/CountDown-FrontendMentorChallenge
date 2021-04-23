@@ -14,7 +14,7 @@
 
     <section class="counter">
       <article class="card">
-        <header class="card-top">
+        <header class="card-top" id="card-top-days">
           <div class="card-top-text">
             <span>00</span>
           </div>
@@ -29,7 +29,7 @@
         </div>
       </article>
       <article class="card">
-        <header class="card-top">
+        <header class="card-top" id="card-top-hours">
           <div class="card-top-text">
             <span>00</span>
           </div>
@@ -44,7 +44,7 @@
         </div>
       </article>
       <article class="card">
-        <header class="card-top">
+        <header class="card-top" id="card-top-minutes">
           <div class="card-top-text">
             <span>00</span>
           </div>
@@ -59,7 +59,7 @@
         </div>
       </article>
       <article class="card">
-        <header class="card-top">
+        <header class="card-top" id="card-top-seconds">
           <div class="card-top-text">
             <span>00</span>
           </div>
@@ -86,6 +86,37 @@
         <img src="./images/icon-instagram.svg" alt="instagram">
       </a>
     </footer>
+  </section>
+
+  <section class="modal" id="modal">
+    <form class="modal-form">
+      <div class="close-icon-container">
+        <button id="close-button">
+          <img class="close-icon" src="./images/close-icon.svg" alt="">
+        </button>
+      </div>
+      <div class="modal-form-input-group">
+        <label for="days">Days</label>
+        <input type="number" name="days" required id="days">
+      </div>
+
+      <div class="modal-form-input-group">
+        <label for="hours">Hours</label>
+        <input type="number" name="hours" required id="hours">
+      </div>
+
+      <div class="modal-form-input-group">
+        <label for="minutes">Minutes</label>
+        <input type="number" required min="0" max="59" name="minutes" id="minutes">
+      </div>
+
+      <div class="modal-form-input-group">
+        <label for="seconds">Seconds</label>
+        <input type="number" name="seconds" required id="seconds">
+      </div>
+
+      <button type="submit" class="modal-form-button-start" id="start-button">Start</button>
+    </form>
   </section>
 
   <script src="app.js"></script>

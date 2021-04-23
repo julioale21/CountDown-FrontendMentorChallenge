@@ -243,4 +243,117 @@ body {
           justify-content: center;
   padding-bottom: 3.85rem;
 }
+
+/*    Modal    */
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-form {
+  width: 325px;
+  height: 480px;
+  border: 3px solid #343650;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #291e21;
+}
+
+.modal-form-button-start {
+  width: 80px;
+  padding: 0.4rem 0;
+  background-color: #343650;
+  border-radius: 10px;
+  margin-top: 1rem;
+  color: #d64f70;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.modal-form-input-group input {
+  width: 100px;
+  height: 30px;
+  background-color: #343650;
+  border: 2px solid #d64f70;
+  border-radius: 10px;
+  outline: none;
+  color: #d64f70;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-form-input-group input::-webkit-inner-spin-button, .modal-form-input-group input ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal-form label {
+  color: #d64f70;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal h1 {
+  color: white;
+}
+
+.close-icon {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+
+.close-icon-container {
+  width: 100%;
+  display: block;
+}
+
+#close-button {
+  width: 50px;
+  float: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
 /*# sourceMappingURL=estilos.css.map */
