@@ -249,7 +249,7 @@ body {
     transform: rotate3d(0);
   }
   50% {
-    transform: rotate3d(-1, 0, 0, 90deg);
+    transform: rotate3d(-1, 0.1, 0, 90deg);
   }
   100% {
     transform: rotate3d(-1, 0, 0, 90deg);

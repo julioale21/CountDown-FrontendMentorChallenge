@@ -58,70 +58,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const { days, hours, minutes, seconds } = result;
 
-      if (Number(textSecondsTop.innerHTML) !== seconds) {
+      if (Number(textSecondsBottom.innerHTML) !== seconds) {
         cardTopSeconds.style.animation = "top-to-bottom 0.5s linear";
         cardBottomSeconds.style.animation = "bottom-to-top 0.5s linear";
       }
 
-      if (Number(textMinutesTop.innerHTML) !== minutes) {
+      if (Number(textMinutesBottom.innerHTML) !== minutes) {
         cardTopMinutes.style.animation = "top-to-bottom 0.5s linear";
         cardBottomMinutes.style.animation = "bottom-to-top 0.5s linear";
       }
 
-      if (Number(textHoursTop.innerHTML) !== hours) {
+      if (Number(textHoursBottom.innerHTML) !== hours) {
         cardTopHours.style.animation = "top-to-bottom 0.5s linear";
         cardBottomHours.style.animation = "bottom-to-top 0.5s linear";
       }
 
-      textSecondsTop.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-      textSecondsBottom.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-      textSecondsTopBg.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-      textSecondsBottomBg.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+      if (Number(textDaysBottom.innerHTML) !== days) {
+        cardTopDays.style.animation = "top-to-bottom 0.5s linear";
+        cardBottomDays.style.animation = "bottom-to-top 0.5s linear";
+      }
 
-      textMinutesTop.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-      textMinutesBottom.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-      textMinutesTopBg.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-      textMinutesBottomBg.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+      textSecondsTop.innerHTML = textSecondsBottom.innerHTML = textSecondsTopBg.innerHTML = textSecondsBottomBg.innerHTML =
+        seconds < 10 ? `0${seconds}` : seconds;
 
-      textHoursTop.innerHTML = hours < 10 ? `0${hours}` : hours;
-      textHoursBottom.innerHTML = hours < 10 ? `0${hours}` : hours;
-      textHoursTopBg.innerHTML = hours < 10 ? `0${hours}` : hours;
-      textHoursBottomBg.innerHTML = hours < 10 ? `0${hours}` : hours;
+      textMinutesTop.innerHTML = textMinutesBottom.innerHTML = textMinutesTopBg.innerHTML = textMinutesBottomBg.innerHTML =
+        minutes < 10 ? `0${minutes}` : minutes;
 
-      textDaysTop.innerHTML = days < 10 ? `0${days}` : days;
-      textDaysBottom.innerHTML = days < 10 ? `0${days}` : days;
-      textDaysTopBg.innerHTML = days < 10 ? `0${days}` : days;
-      textDaysBottomBg.innerHTML = days < 10 ? `0${days}` : days;
+      textHoursTop.innerHTML = textHoursBottom.innerHTML = textHoursTopBg.innerHTML = textHoursBottomBg.innerHTML =
+        hours < 10 ? `0${hours}` : hours;
+
+      textDaysTop.innerHTML = textDaysBottom.innerHTML = textDaysTopBg.innerHTML = textDaysBottomBg.innerHTML =
+        days < 10 ? `0${days}` : days;
 
       cardTopSeconds.addEventListener("animationend", () => {
         cardTopSeconds.style.animation = "";
-      });
-
-      cardBottomSeconds.addEventListener("animationend", () => {
         cardBottomSeconds.style.animation = "";
       });
 
       cardTopMinutes.addEventListener("animationend", () => {
         cardTopMinutes.style.animation = "";
-      });
-
-      cardBottomMinutes.addEventListener("animationend", () => {
         cardBottomMinutes.style.animation = "";
       });
 
       cardTopHours.addEventListener("animationend", () => {
         cardTopHours.style.animation = "";
-      });
-
-      cardBottomHours.addEventListener("animationend", () => {
         cardBottomHours.style.animation = "";
       });
 
       cardTopDays.addEventListener("animationend", () => {
         cardTopDays.style.animation = "";
-      });
-
-      cardBottomDays.addEventListener("animationend", () => {
         cardBottomDays.style.animation = "";
       });
 
