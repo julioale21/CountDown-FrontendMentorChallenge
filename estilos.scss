@@ -295,7 +295,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $very-dark-blue;
+    background-color: black;
+    
 
     &-button-start {
       width: 80px;
@@ -307,6 +308,7 @@ body {
       font-weight: bold;
       border: 0;
       cursor: pointer;
+      text-shadow: gray 0.5px 0.5px 0.5px;
     }
 
     &-input-group {
@@ -337,6 +339,7 @@ body {
       color: $soft-red;
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      text-shadow: gray 0.5px 0.5px 0.5px;
     }
   }
 

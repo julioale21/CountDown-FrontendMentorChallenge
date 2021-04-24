@@ -382,7 +382,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #291e21;
+  background-color: black;
 }
 
 .modal-form-button-start {
@@ -395,6 +395,7 @@ body {
   font-weight: bold;
   border: 0;
   cursor: pointer;
+  text-shadow: gray 0.5px 0.5px 0.5px;
 }
 
 .modal-form-input-group {
@@ -432,6 +433,7 @@ body {
   color: #d64f70;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  text-shadow: gray 0.5px 0.5px 0.5px;
 }
 
 .modal h1 {
