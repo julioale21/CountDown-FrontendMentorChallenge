@@ -78,6 +78,28 @@ body {
   bottom: 0;
 }
 
+.card-top::before,
+.card-top-bg::before,
+.card-bottom::before,
+.card-bottom-bg::before {
+  position: absolute;
+  content: " ";
+  background-color: #191a24;
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.card-top::after,
+.card-top-bg::after,
+.card-bottom::after,
+.card-bottom-bg::after {
+  position: absolute;
+  content: " ";
+  background-color: #191a24;
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
 .card-top,
 .card-top-bg {
   border-radius: 10px 10px 0 0;
@@ -87,24 +109,14 @@ body {
 
 .card-top::before,
 .card-top-bg::before {
-  position: absolute;
   bottom: 0;
   left: 0;
-  content: " ";
   border-radius: 0 100% 0 0;
-  background-color: #191a24;
-  width: 0.25rem;
-  height: 0.25rem;
 }
 
 .card-top::after,
 .card-top-bg::after {
-  position: absolute;
   bottom: 0;
-  content: " ";
-  background-color: #191a24;
-  width: 0.25rem;
-  height: 0.25rem;
   border-radius: 100% 0 0 0;
   right: 0;
 }
@@ -142,24 +154,14 @@ body {
 
 .card-bottom::before,
 .card-bottom-bg::before {
-  position: absolute;
   top: 0;
   left: 0;
-  content: " ";
   border-radius: 0 0 100% 0;
-  background-color: #191a24;
-  width: 0.25rem;
-  height: 0.25rem;
 }
 
 .card-bottom::after,
 .card-bottom-bg::after {
-  position: absolute;
   top: 0;
-  content: " ";
-  background-color: #191a24;
-  width: 0.25rem;
-  height: 0.25rem;
   border-radius: 0 0 0 100%;
   right: 0;
 }
@@ -344,7 +346,7 @@ body {
   }
 }
 
-/*    Modal    */
+/* --------Modal--------*/
 .modal {
   display: -webkit-box;
   display: -ms-flexbox;

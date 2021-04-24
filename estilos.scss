@@ -93,26 +93,37 @@ body {
 }
 
 .card-top,
-.card-top-bg {
-  border-radius: 10px 10px 0 0;
-  transform-origin: bottom;
+.card-top-bg,
+.card-bottom,
+.card-bottom-bg {
   &::before {
     position: absolute;
-    bottom: 0;
-    left: 0;
     content: " ";
-    border-radius: 0 100% 0 0;
     background-color: $very-dark-mostly-black-blue;
     width: 0.25rem;
     height: 0.25rem;
   }
+
   &::after {
     position: absolute;
-    bottom: 0;
     content: " ";
     background-color: $very-dark-mostly-black-blue;
     width: 0.25rem;
     height: 0.25rem;
+  }
+}
+
+.card-top,
+.card-top-bg {
+  border-radius: 10px 10px 0 0;
+  transform-origin: bottom;
+  &::before {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 0;
+  }
+  &::after {
+    bottom: 0;
     border-radius: 100% 0 0 0;
     right: 0;
   }
@@ -142,22 +153,12 @@ body {
   transform-origin: top;
 
   &::before {
-    position: absolute;
     top: 0;
     left: 0;
-    content: " ";
     border-radius: 0 0 100% 0;
-    background-color: $very-dark-mostly-black-blue;
-    width: 0.25rem;
-    height: 0.25rem;
   }
   &::after {
-    position: absolute;
     top: 0;
-    content: " ";
-    background-color: $very-dark-mostly-black-blue;
-    width: 0.25rem;
-    height: 0.25rem;
     border-radius: 0 0 0 100%;
     right: 0;
   }
@@ -268,9 +269,7 @@ body {
   }
 }
 
-
-
-/*    Modal    */
+/* --------Modal--------*/
 
 .modal {
   display: flex;
