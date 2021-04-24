@@ -10,7 +10,7 @@
 
    <h1 align="center">CountDown - Frontend Mentor Challenge</h1>
 
-  ![Design preview for the CountDown coding challenge](https://frontend-mentor-count-down.vercel.app/)
+  ![Design preview for the CountDown coding challenge](https://res.cloudinary.com/dz209s6jk/image/upload/v1607616391/Challenges/sgyggipeoqrv2inrkxja.jpg)
   
 ## The challenge
 
