@@ -1,0 +1,29 @@
+{
+  "name": "frontend-mentor-countdown",
+  "version": "1.0.0",
+  "description": "A frontend mentor challenge - flip card countdown",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julioale21/Frontend-Mentor-CountDown.git"
+  },
+  "author": "julio romero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julioale21/Frontend-Mentor-CountDown/issues"
+  },
+  "homepage": "https://github.com/julioale21/Frontend-Mentor-CountDown#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "prettier": "2.2.1"
+  }
+}

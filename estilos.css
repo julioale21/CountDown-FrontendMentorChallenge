@@ -44,6 +44,12 @@ body {
 
 .card {
   margin: 0 0.25rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-body {
+  position: relative;
 }
 
 @media screen and (min-width: 640px) {
@@ -54,26 +60,33 @@ body {
 
 .card-top,
 .card-bottom {
-  width: 4.4rem;
-  height: 2.1rem;
   position: relative;
-  border: 0 solid #191a24;
+  z-index: 1;
 }
 
-@media screen and (min-width: 640px) {
-  .card-top,
-  .card-bottom {
-    width: 6.2rem;
-    height: 3rem;
-  }
+.card-top-bg,
+.card-bottom-bg {
+  position: absolute;
+  z-index: 0;
 }
 
-.card-top {
+.card-top-bg {
+  top: 0;
+}
+
+.card-bottom-bg {
+  bottom: 0;
+}
+
+.card-top,
+.card-top-bg {
   border-radius: 10px 10px 0 0;
-  background-color: #2c2c44;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
-.card-top::before {
+.card-top::before,
+.card-top-bg::before {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -84,7 +97,8 @@ body {
   height: 0.25rem;
 }
 
-.card-top::after {
+.card-top::after,
+.card-top-bg::after {
   position: absolute;
   bottom: 0;
   content: " ";
@@ -95,14 +109,39 @@ body {
   right: 0;
 }
 
-.card-bottom {
+.card-top,
+.card-bottom,
+.card-top-bg,
+.card-bottom-bg {
+  width: 4.4rem;
+  height: 2.1rem;
+  overflow: hidden;
+  border: 0 solid #191a24;
+  background-color: #2c2c44;
+}
+
+@media screen and (min-width: 640px) {
+  .card-top,
+  .card-bottom,
+  .card-top-bg,
+  .card-bottom-bg {
+    width: 6.2rem;
+    height: 3rem;
+  }
+}
+
+.card-bottom,
+.card-bottom-bg {
   border-radius: 0 0 10px 10px;
   background-color: #34364f;
   -webkit-box-shadow: #101118 2px 5px 5px;
           box-shadow: #101118 2px 5px 5px;
+  -webkit-transform-origin: top;
+          transform-origin: top;
 }
 
-.card-bottom::before {
+.card-bottom::before,
+.card-bottom-bg::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,7 +152,8 @@ body {
   height: 0.25rem;
 }
 
-.card-bottom::after {
+.card-bottom::after,
+.card-bottom-bg::after {
   position: absolute;
   top: 0;
   content: " ";
@@ -124,7 +164,7 @@ body {
   right: 0;
 }
 
-.card-bottom-text > span {
+.card-bottom-text > span, .card-bottom-text-bg > span {
   position: absolute;
   top: 0;
   left: 50%;
@@ -136,25 +176,25 @@ body {
 }
 
 @media screen and (min-width: 640px) {
-  .card-bottom-text > span {
+  .card-bottom-text > span, .card-bottom-text-bg > span {
     font-size: 3rem;
     letter-spacing: 1.5px;
   }
 }
 
-.card-top-text > span {
+.card-top-text > span, .card-top-text-bg > span {
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
   line-height: 1;
   color: #ff5c89;
   font-size: 1.7rem;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 
 @media screen and (min-width: 640px) {
-  .card-top-text > span {
+  .card-top-text > span, .card-top-text-bg > span {
     font-size: 3rem;
     letter-spacing: 1.5px;
   }
@@ -242,6 +282,66 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding-bottom: 3.85rem;
+}
+
+@-webkit-keyframes top-to-bottom {
+  0% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+  50% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+}
+
+@keyframes top-to-bottom {
+  0% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+  50% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+            transform: rotate3d(-1, 0, 0, 90deg);
+  }
+}
+
+@-webkit-keyframes bottom-to-top {
+  0% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
+}
+
+@keyframes bottom-to-top {
+  0% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0);
+            transform: rotate3d(0);
+  }
 }
 
 /*    Modal    */

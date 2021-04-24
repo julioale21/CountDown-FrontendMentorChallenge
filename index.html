@@ -59,14 +59,26 @@
         </div>
       </article>
       <article class="card">
-        <header class="card-top" id="card-top-seconds">
-          <div class="card-top-text">
-            <span>00</span>
+        <div class="card-body">
+          <div class="card-top" id="card-top-seconds">
+            <div class="card-top-text">
+              <span>00</span>
+            </div>
           </div>
-        </header>
-        <div class="card-bottom">
-          <div class="card-bottom-text">
-            <span>00</span>
+          <div class="card-bottom" id="card-bottom-seconds">
+            <div class="card-bottom-text">
+              <span>00</span>
+            </div>
+          </div>
+          <div class="card-top-bg">
+            <div class="card-top-text-bg">
+              <span>00</span>
+            </div>
+          </div>
+          <div class="card-bottom-bg">
+            <div class="card-bottom-text-bg">
+              <span>00</span>
+            </div>
           </div>
         </div>
         <div class="card-footer">
@@ -92,30 +104,35 @@
     <form class="modal-form">
       <div class="close-icon-container">
         <button id="close-button">
-          <img class="close-icon" src="./images/close-icon.svg" alt="">
+          <img class="close-icon" src="./images/close-icon.svg" alt="close-icon">
         </button>
       </div>
       <div class="modal-form-input-group">
         <label for="days">Days</label>
-        <input type="number" name="days" required id="days">
+        <input type="number" name="days" required min="0" id="days" autocomplete="off">
       </div>
 
       <div class="modal-form-input-group">
         <label for="hours">Hours</label>
-        <input type="number" name="hours" required id="hours">
+        <input type="number" name="hours" required min="0" id="hours" autocomplete="off">
       </div>
 
       <div class="modal-form-input-group">
         <label for="minutes">Minutes</label>
-        <input type="number" required min="0" max="59" name="minutes" id="minutes">
+        <input type="number" required min="0" max="59" name="minutes" id="minutes" autocomplete="off">
       </div>
 
       <div class="modal-form-input-group">
         <label for="seconds">Seconds</label>
-        <input type="number" name="seconds" required id="seconds">
+        <input type="number" name="seconds" required min="0" id="seconds" autocomplete="off">
       </div>
 
-      <button type="submit" class="modal-form-button-start" id="start-button">Start</button>
+      <button 
+        type="submit"
+        class="modal-form-button-start"
+      >
+        Start
+      </button>
     </form>
   </section>
 
