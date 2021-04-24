@@ -1,4 +1,4 @@
-# Frontend-Mentor-CountDown
+# CountDown - Frontend Mentor Challenge
 
 
 ## Demo
