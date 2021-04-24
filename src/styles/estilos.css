@@ -28,8 +28,8 @@ html {
 }
 
 body {
-  background-image: url("./images/bg-stars.svg"), url("./images/pattern-hills.svg"), -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#291e21));
-  background-image: url("./images/bg-stars.svg"), url("./images/pattern-hills.svg"), linear-gradient(to bottom, #191a24, #291e21);
+  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#291e21));
+  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #191a24, #291e21);
   background-repeat: no-repeat, no-repeat;
   background-position: right 0vh top 0vh, left -40vh bottom 0vh;
   height: 100%;

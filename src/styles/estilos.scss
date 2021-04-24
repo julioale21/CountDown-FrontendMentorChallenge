@@ -44,8 +44,8 @@ html {
 }
 
 body {
-  background-image: url("./images/bg-stars.svg"),
-    url("./images/pattern-hills.svg"),
+  background-image: url("../images/bg-stars.svg"),
+    url("../images/pattern-hills.svg"),
     linear-gradient(to bottom, $very-dark-mostly-black-blue, $very-dark-blue);
   background-repeat: no-repeat, no-repeat;
   background-position: right 0vh top 0vh, left -40vh bottom 0vh;
