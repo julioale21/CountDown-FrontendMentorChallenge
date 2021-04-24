@@ -163,7 +163,7 @@ body {
   }
 }
 
-.card-bottom-text > span, .card-bottom-text-bg > span {
+.card-bottom > span, .card-bottom-bg > span {
   position: absolute;
   top: 0;
   left: 50%;
@@ -178,7 +178,7 @@ body {
   }
 }
 
-.card-top-text > span, .card-top-text-bg > span {
+.card-top > span, .card-top-bg > span {
   position: absolute;
   bottom: 0;
   left: 50%;

@@ -15,11 +15,11 @@ const getRemainingTime = (endTime) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const spansBottom = document.querySelectorAll(".card-bottom-text  span");
-  const spansTop = document.querySelectorAll(".card-top-text span");
+  const spansBottom = document.querySelectorAll(".card-bottom  span");
+  const spansTop = document.querySelectorAll(".card-top span");
 
-  const spansBottomBackground = document.querySelectorAll(".card-bottom-text-bg  span");
-  const spansTopBackground = document.querySelectorAll(".card-top-text-bg span");
+  const spansBottomBackground = document.querySelectorAll(".card-bottom-bg  span");
+  const spansTopBackground = document.querySelectorAll(".card-top-bg span");
 
   let textDaysTop = spansTop[0];
   let textDaysBottom = spansBottom[0];
@@ -30,17 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
   let textSecondsTop = spansTop[3];
   let textSecondsBottom = spansBottom[3];
 
-  let textDaysTopBackground = spansTopBackground[0];
-  let textDaysBottomBackground = spansBottomBackground[0];
-  let textHoursTopBackground = spansTopBackground[1];
-  let textHoursBottomBackground = spansBottomBackground[1];
-  let textMinutesTopBackground = spansTopBackground[2];
-  let textMinutesBottomBackground = spansBottomBackground[2];
-  let textSecondsTopBackground = spansTopBackground[0];
-  let textSecondsBottomBackground = spansBottomBackground[0];
+  let textDaysTopBg = spansTopBackground[0];
+  let textDaysBottomBg = spansBottomBackground[0];
+  let textHoursTopBg = spansTopBackground[1];
+  let textHoursBottomBg = spansBottomBackground[1];
+  let textMinutesTopBg = spansTopBackground[2];
+  let textMinutesBottomBg = spansBottomBackground[2];
+  let textSecondsTopBg = spansTopBackground[3];
+  let textSecondsBottomBg = spansBottomBackground[3];
 
   let cardTopSeconds = document.getElementById("card-top-seconds");
   let cardBottomSeconds = document.getElementById("card-bottom-seconds");
+
+  let cardTopMinutes = document.getElementById("card-top-minutes");
+  let cardBottomMinutes = document.getElementById("card-bottom-minutes");
+
+  let cardTopHours = document.getElementById("card-top-hours");
+  let cardBottomHours = document.getElementById("card-bottom-hours");
+
+  let cardTopDays = document.getElementById("card-top-days");
+  let cardBottomDays = document.getElementById("card-bottom-days");
 
   const startCountDown = (time) => {
     const countDown = setInterval(() => {
@@ -49,22 +58,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const { days, hours, minutes, seconds } = result;
 
-      cardTopSeconds.style.animation = "top-to-bottom 0.5s linear";
-      cardBottomSeconds.style.animation = "bottom-to-top 0.5s linear";
+      if (Number(textSecondsTop.innerHTML) !== seconds) {
+        cardTopSeconds.style.animation = "top-to-bottom 0.5s linear";
+        cardBottomSeconds.style.animation = "bottom-to-top 0.5s linear";
+      }
+
+      if (Number(textMinutesTop.innerHTML) !== minutes) {
+        cardTopMinutes.style.animation = "top-to-bottom 0.5s linear";
+        cardBottomMinutes.style.animation = "bottom-to-top 0.5s linear";
+      }
+
+      if (Number(textHoursTop.innerHTML) !== hours) {
+        cardTopHours.style.animation = "top-to-bottom 0.5s linear";
+        cardBottomHours.style.animation = "bottom-to-top 0.5s linear";
+      }
 
       textSecondsTop.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
       textSecondsBottom.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-      textSecondsTopBackground.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-      textSecondsBottomBackground.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+      textSecondsTopBg.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+      textSecondsBottomBg.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 
       textMinutesTop.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
       textMinutesBottom.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+      textMinutesTopBg.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+      textMinutesBottomBg.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
 
       textHoursTop.innerHTML = hours < 10 ? `0${hours}` : hours;
       textHoursBottom.innerHTML = hours < 10 ? `0${hours}` : hours;
+      textHoursTopBg.innerHTML = hours < 10 ? `0${hours}` : hours;
+      textHoursBottomBg.innerHTML = hours < 10 ? `0${hours}` : hours;
 
       textDaysTop.innerHTML = days < 10 ? `0${days}` : days;
       textDaysBottom.innerHTML = days < 10 ? `0${days}` : days;
+      textDaysTopBg.innerHTML = days < 10 ? `0${days}` : days;
+      textDaysBottomBg.innerHTML = days < 10 ? `0${days}` : days;
 
       cardTopSeconds.addEventListener("animationend", () => {
         cardTopSeconds.style.animation = "";
@@ -72,6 +99,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       cardBottomSeconds.addEventListener("animationend", () => {
         cardBottomSeconds.style.animation = "";
+      });
+
+      cardTopMinutes.addEventListener("animationend", () => {
+        cardTopMinutes.style.animation = "";
+      });
+
+      cardBottomMinutes.addEventListener("animationend", () => {
+        cardBottomMinutes.style.animation = "";
+      });
+
+      cardTopHours.addEventListener("animationend", () => {
+        cardTopHours.style.animation = "";
+      });
+
+      cardBottomHours.addEventListener("animationend", () => {
+        cardBottomHours.style.animation = "";
+      });
+
+      cardTopDays.addEventListener("animationend", () => {
+        cardTopDays.style.animation = "";
+      });
+
+      cardBottomDays.addEventListener("animationend", () => {
+        cardBottomDays.style.animation = "";
       });
 
       if (time < 0) {
