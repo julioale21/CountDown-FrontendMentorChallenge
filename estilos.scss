@@ -367,3 +367,27 @@ body {
   border: none;
   cursor: pointer;
 }
+
+
+.navbar {
+  width: 100%;
+  & button {
+    float: right;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    background: transparent;
+    border: none;
+    color: $soft-red;
+    font-size: 1rem;
+    cursor: pointer;
+    
+
+    &:hover {
+      opacity: 90%;
+    }
+
+    &:focus {
+      opacity: 70%;
+    }
+  }
+}

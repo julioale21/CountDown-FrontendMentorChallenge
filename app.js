@@ -51,8 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardTopDays = document.getElementById("card-top-days");
   let cardBottomDays = document.getElementById("card-bottom-days");
 
+  const btnSettings = document.querySelector(".navbar button");
+
+  btnSettings.addEventListener("click", () => {
+    document.getElementById("modal").style.display = "flex";
+  });
+
+  let clockInterval = setInterval(function () {}, 1000);
+
   const startCountDown = (time) => {
-    const countDown = setInterval(() => {
+    clockInterval = setInterval(() => {
       const result = getRemainingTime(time);
       time = result.endTime;
 
@@ -111,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (time < 0) {
-        clearInterval(countDown);
+        clearInterval(clockInterval);
       }
     }, 1000);
   };
@@ -129,6 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let time = days * 86400000 + hours * 3600000 + minutes * 60000 + seconds * 1000;
 
+    document.querySelector(".modal-form").reset();
+
+    if (clockInterval) clearInterval(clockInterval);
     startCountDown(time);
     modal.style.display = "none";
   });

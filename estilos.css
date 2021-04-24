@@ -458,4 +458,27 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.navbar {
+  width: 100%;
+}
+
+.navbar button {
+  float: right;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background: transparent;
+  border: none;
+  color: #d64f70;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  opacity: 90%;
+}
+
+.navbar button:focus {
+  opacity: 70%;
+}
 /*# sourceMappingURL=estilos.css.map */
