@@ -32,7 +32,6 @@ Bonus: When a number changes, make the card flip from the middle
 
 ## Mobile Design
 
-
 <p align="center">
   <img src="./docs/mobile-design.jpg">
 </p>
